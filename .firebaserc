@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "todolist-aaf18",
+    "firebase-deploy": "todolist-aaf18"
+  },
+  "targets": {},
+  "etags": {}
+}
