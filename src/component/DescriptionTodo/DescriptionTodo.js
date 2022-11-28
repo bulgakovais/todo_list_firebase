@@ -4,6 +4,7 @@ import * as dayjs from 'dayjs'
 
 
 export function DescriprionTodo({ el }) {
+    // console.log(el)
     const [valid, setValid] = useState(true)
 
     /** Записывает сегодняшнее число в формате 'YYYY-MM-DD'
