@@ -39,13 +39,20 @@
     flex-direction: column;
     padding: 2%;
     background-color: @background-color;
+    
 }
 
 .input_main{
     height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0 20px;
     margin: 8px 0 15px;
+    font-family: 'Helvetica Neue';
+   
+}
+.textarea{
+  height: 30px;
+  padding-top: 10px;
 }
 .input_file{
     height: 50px;
@@ -73,27 +80,28 @@
     justify-content: start;
 }
 .btn_file{
-    height: 30px;
+    height: 40px;
     width: 20%;
     min-width: 164px;
     background-color: #c77d78de;
-    margin: 5px 0 15px;
+    margin-bottom: 15px;
     text-align: center;
-    padding-top: 5px;
     &:hover{
         background-color: #c89693de;
     }
     & span{
         color: #331c20;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
+        vertical-align: -webkit-baseline-middle;
     }
 }
 .selected_file{
     color: #331c20;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     padding: 10px 15px;
+    font-family: 'Helvetica Neue';
 }
 // ___________ Todo List ___________________________
 
@@ -122,6 +130,7 @@
         margin-top: 20px;
         padding: 20px;
         background-color: @background-color;
+        word-wrap: break-word;
         &_text{
             font-weight: 600;
         }
@@ -171,3 +180,51 @@
         padding: 0;
         margin: 0;
     }
+
+
+    @media(max-width: 600px){
+      .todoItem_title {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+      .todoItem_description{
+        padding: 8px;
+      }
+      .todoItem{
+        font-size: 14px;
+      }
+      .btn_todo {
+        width: 15px;
+        height: 15px;
+        font-size: 14px;
+        margin: 3px;
+      }
+      .params_check_todo{
+        flex-direction: column;
+        display: flex;
+      }
+      .todoItem{
+        margin:10px 0;
+        padding: 5px 5px;
+      }
+      .form{
+        font-size: 14px;
+
+      .input_main{
+        font-size: 14px;
+        padding: 0 5px;
+        margin: 8px 0 15px;
+      }
+      
+      .file_block{
+        flex-direction: column;
+      }
+      .selected_file{
+        padding: 0 0 5px;
+      }
+      .btn_file span{
+        font-size: 14px;
+        vertical-align: -webkit-baseline-middle;
+      }
+    }
+  }

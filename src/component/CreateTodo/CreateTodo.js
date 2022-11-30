@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import { createTodo } from '../../store/todo/actions'
 import { getTodoRefById } from '../../services/firebase'
 import { set, update } from "firebase/database"
-import '../../App.less'
+import "../../App.less"
 
 export function CreateTodo({ ...el }) {
 
@@ -49,6 +49,9 @@ export function CreateTodo({ ...el }) {
        */
     function getCreateTodo() {
         const newTodo = getNewTodo()
+        if (newTodo === undefined) {
+            return
+        }
         const newTodoId = `${nanoid()}`
         const newTodoCreate = { ...newTodo, id: newTodoId }
 
@@ -81,6 +84,10 @@ export function CreateTodo({ ...el }) {
 
         event.preventDefault()
         const newTodo = getCreateTodo()
+        if (typeof (newTodo) !== 'object') {
+            console.log('Error: newTodo is not object')
+            return
+        }
         dispatch(createTodo(newTodo))
         await set(getTodoRefById(newTodo.id), newTodo)
         getDefaultInputValue()
@@ -137,14 +144,14 @@ export function CreateTodo({ ...el }) {
             <input className='input_main' type='text' id='title' value={titleTodo} onChange={setTitle} />
 
             <label htmlFor="descr">Описание заметки</label>
-            <input className='input_main' type='text' id='descr' value={descriptionTodo} onChange={setDescription} />
+            <textarea className='input_main textarea' id='descr' value={descriptionTodo} onChange={setDescription} />
 
             <div className='file_block'><div className='btn_file' onClick={handlePickFile}><span>Выбрать файл</span></div>
                 <input ref={buttonFile} className='hidden' type="file" id="file"
                     onChange={handleChangeFile} multiple />
 
                 {fileTodo && (
-                    <div className='selected_file'>Выбранный файл: {fileTodo}</div>
+                    <div className='selected_file'><span>Выбранный файл: {fileTodo}</span></div>
                 )}
             </div>
             <label htmlFor="date">Дата окончания</label>

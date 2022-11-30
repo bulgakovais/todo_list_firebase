@@ -99,7 +99,7 @@ export function Todo() {
                     </button>
 
                     <h4 className='todoItem_title'>{el.title}</h4>
-                    <div>
+                    <div className='params_check_todo'>
 
                         <button id='see' className='btn_todo' onClick={() => {
                             setTodoId(el.id)

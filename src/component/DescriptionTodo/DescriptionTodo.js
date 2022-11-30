@@ -30,7 +30,7 @@ export function DescriprionTodo({ el }) {
     return (
         <div className='todoItem_description'>
             {el.description ? (
-                <div><span className='todoItem_description_text'>Описание: </span> {el.description}</div>
+                <div><span className='todoItem_description_text'>Описание: </span> <p className="">{el.description}</p></div>
             ) : (<p></p>)}
 
             {el.file ? (
