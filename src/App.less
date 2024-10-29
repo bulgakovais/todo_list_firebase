@@ -1,230 +1,235 @@
-
-  @block-background: #bfd9e3;
-  @font-color: #331c20;;
-  @block-border-color: #ddd;
-  @todo-disable:rgb(210, 229, 200);
-  @todo-able:rgb(223, 182, 176);
-  @background-color: #f0eeee;
-  @button-color:#331c20;
-  @button-color-hover:#5c3e42;
-
-
+@block-background: #bfd9e3;
+@font-color: #331c20;
+@block-border-color: #ddd;
+@todo-disable: #8abadb;
+@todo-able:rgb (223, 182, 176);
+@background-color: #c9c4c4;
+@button-color: #331c20;
+@button-color-hover: #5c3e42;
+@border-radius-max: 10px;
+@border-radius-min: 5px;
 * {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	}
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 
 .container {
-    max-width: 1170px;
-    margin: 0 15px;
-  }
+  max-width: 1170px;
+  padding: 50px 15px;
+  background-color: #bfd9e39e;
+}
+label {
+  color: green;
+}
 // _________________Header___________________________
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 63px;
-    background-color: @block-background;
-    font-size: 2em;
-    color: @font-color;
-    font-weight: 800;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 63px;
+  background-color: @block-background;
+  font-size: 2em;
+  color: @font-color;
+  font-weight: 800;
+  border-radius: @border-radius-max;
+  margin-bottom: 15px;
 }
 
 // ___________________ Create Todo form ___________________
-.form{
-    color: @font-color;
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
-    background-color: @background-color;
-    
+.form {
+  color: @font-color;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  background-color: @background-color;
+  border-radius: @border-radius-max;
 }
 
-.input_main{
-    height: 40px;
-    font-size: 16px;
-    padding: 0 20px;
-    margin: 8px 0 15px;
-    font-family: 'Helvetica Neue';
-   
+.input_main {
+  height: 40px;
+  font-size: 16px;
+  padding: 0 20px;
+  margin: 8px 0 15px;
+  font-family: "Helvetica Neue";
+  border-radius: @border-radius-max;
 }
-.textarea{
+.textarea {
   height: 30px;
   padding-top: 10px;
 }
-.input_file{
-    height: 50px;
-    margin-top: 8px;
+.input_file {
+  height: 50px;
+  margin-top: 8px;
 }
-.input_date{
-    width: 19%;
-    min-width: 164px;
-    margin-top: 10px;
-    font-weight: 500;
-    font-family: 'Roboto';
-    padding: 5px;
+.input_date {
+  width: 19%;
+  min-width: 164px;
+  margin-top: 10px;
+  font-weight: 500;
+  font-family: "Roboto";
+  padding: 5px;
+  border-radius: @border-radius-min;
 }
-.btn{
-    width: 20%;
-    min-width: 164px;
-    background-color: @button-color;
-    color: #f0eeee;
-    &:hover{
-        background-color: @button-color-hover;
-    }
+.btn {
+  width: 20%;
+  min-width: 164px;
+  border-radius: @border-radius-max;
 }
-.file_block{
-    display: flex;
-    justify-content: start;
+.btn_create {
+  margin-top: 20px;
+  background-color: @button-color;
+  color: #f0eeee;
+  &:hover {
+    background-color: @button-color-hover;
+  }
 }
-.btn_file{
-    height: 40px;
-    width: 20%;
-    min-width: 164px;
-    background-color: #c77d78de;
-    margin-bottom: 15px;
-    text-align: center;
-    &:hover{
-        background-color: #c89693de;
-    }
-    & span{
-        color: #331c20;
-        font-size: 16px;
-        font-weight: 500;
-        vertical-align: -webkit-baseline-middle;
-    }
+.file_block {
+  display: flex;
+  justify-content: start;
 }
-.selected_file{
-    color: #331c20;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 15px;
-    font-family: 'Helvetica Neue';
+.btn_file {
+  color: #331c20;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 500;
+  vertical-align: -webkit-baseline-middle;
+}
+.selected_file {
+  color: #331c20;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 15px;
+  font-family: "Helvetica Neue";
+}
+.date {
+  margin-top: 20px;
 }
 // ___________ Todo List ___________________________
 
-    .todoHeader{
-        margin-top: 50px;
-    }
+.todoHeader {
+  margin-top: 50px;
+}
 
-    .todoItem{
+.todoItem {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  font-size: 18px;
+  background-color: #64a963;
+  margin: 30px 0;
+  border-radius: @border-radius-max;
+
+  &_flex {
     display: flex;
-    flex-direction: column;
-    padding: 20px 10px;
-    font-size: 18px;
-    background-color: @todo-disable;
-    margin: 30px 0;
-    
-    &_flex{
-        display: flex;
-        justify-content: space-between;
-        }
-    &_title{
-        margin-left: 20px;
-    }
-    }
+    justify-content: space-between;
+  }
+  &_title {
+    margin-left: 20px;
+  }
+}
 
-    .todoItem_description{
-        margin-top: 20px;
-        padding: 20px;
-        background-color: @background-color;
-        word-wrap: break-word;
-        &_text{
-            font-weight: 600;
-        }
-    }
-  
-    .unvalid_data{
-        color: rgb(218, 3, 3);
-    }
-    .icon_edit{
-        color: white;
-    }
-    .btn_todo{
-        width: 23px;
-        height: 23px;
-        font-size: 17px;
-        background-color: @button-color;
-        color: white;
-        margin: 0 15px;
-        &:hover{
-            background-color: @button-color-hover;
-            color: rgb(143, 224, 141);
-            scale: 120%;
-        };
-        &_delete:hover{
-            color: rgb(218, 67, 67);
-        }
-    }
-   
-    .fa-check-circle{
-        color:rgb(143, 224, 141);
-    }
-
-    .fa-circle-o{
-        color:  rgb(218, 67, 67);
-    }
-
-    .updateTodoFlex{
-        margin-top: 15px;
-    }
-
-    .hidden{
-        opacity: 0;
-        height: 0;
-        width: 0;
-        line-height: 0;
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
-    }
-
-
-    @media(max-width: 600px){
-      .todoItem_title {
-        margin-left: 10px;
-        font-size: 14px;
-      }
-      .todoItem_description{
-        padding: 8px;
-      }
-      .todoItem{
-        font-size: 14px;
-      }
-      .btn_todo {
-        width: 15px;
-        height: 15px;
-        font-size: 14px;
-        margin: 3px;
-      }
-      .params_check_todo{
-        flex-direction: column;
-        display: flex;
-      }
-      .todoItem{
-        margin:10px 0;
-        padding: 5px 5px;
-      }
-      .form{
-        font-size: 14px;
-
-      .input_main{
-        font-size: 14px;
-        padding: 0 5px;
-        margin: 8px 0 15px;
-      }
-      
-      .file_block{
-        flex-direction: column;
-      }
-      .selected_file{
-        padding: 0 0 5px;
-      }
-      .btn_file span{
-        font-size: 14px;
-        vertical-align: -webkit-baseline-middle;
-      }
+.todoItem_description {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: @background-color;
+  word-wrap: break-word;
+  &_text {
+    &_text {
+      font-weight: 600;
     }
   }
+}
+.unvalid_data {
+  color: rgb(218, 3, 3);
+}
+.icon_edit {
+  color: white;
+}
+.btn_todo {
+  width: 23px;
+  height: 23px;
+  font-size: 17px;
+  border-radius: @border-radius-min;
+  background-color: @button-color;
+  color: white;
+  margin: 0 15px;
+  &:hover {
+    background-color: @button-color-hover;
+    color: rgb(143, 224, 141);
+    scale: 120%;
+  }
+  &_delete:hover {
+    color: rgb(218, 67, 67);
+  }
+}
+
+.fa-check-circle {
+  color: rgb(143, 224, 141);
+}
+
+.fa-circle-o {
+  color: rgb(218, 67, 67);
+}
+
+.updateTodoFlex {
+  margin-top: 15px;
+}
+
+.hidden {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  line-height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .todoItem_title {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  .todoItem_description {
+    padding: 8px;
+  }
+  .todoItem {
+    font-size: 14px;
+  }
+  .btn_todo {
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+    margin: 3px;
+  }
+  .params_check_todo {
+    flex-direction: column;
+    display: flex;
+  }
+  .todoItem {
+    margin: 10px 0;
+    padding: 5px 5px;
+  }
+  .form {
+    font-size: 14px;
+
+    .input_main {
+      font-size: 14px;
+      padding: 0 5px;
+      margin: 8px 0 15px;
+    }
+
+    .file_block {
+      flex-direction: column;
+    }
+    .selected_file {
+      padding: 0 0 5px;
+    }
+    .btn_file span {
+      font-size: 14px;
+      vertical-align: -webkit-baseline-middle;
+    }
+  }
+}
